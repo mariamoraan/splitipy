@@ -8,7 +8,13 @@ const webpackConfig = (env): Configuration => ({
     entry: "./src/index.tsx",
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".css"],
-        plugins: [new TsconfigPathsPlugin()]
+        plugins: [new TsconfigPathsPlugin()],
+        alias: {
+            "@common": path.resolve(__dirname, "src/common"),
+            "@groups": path.resolve(__dirname, "src/groups"),
+            "@transactions": path.resolve(__dirname, "src/transactions"),
+            "@users": path.resolve(__dirname, "src/users"),
+        }
     },
     output: {
         path: path.join(__dirname, "/dist"),
