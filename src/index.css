@@ -1,0 +1,54 @@
+:root {
+    --purple: #7E30E1;
+    --light-purple: rgba(126, 50, 226, 0.2);
+    --black: #03071e;
+    --white: hsl(266, 75%, 99%);
+    --blue: #3887BE;
+    --grey: grey;
+    --light-grey: hsl(0, 2%, 94%);
+    --red: #BF3131;
+    --green: #88AB8E;
+
+    --primary-color-dark: var(--black);
+    --primary-color-dark-100: var(--grey);
+    --primary-color-light-100: var(--light-grey);
+    --primary-color-light: var(--white);
+    --bg-color-light: var(--white);
+    --bg-color-dark: var(--white);
+    --accent-color-100: var(--purple);
+    --accent-color-190: var(--light-purple);
+    --accent-color-200: var(--blue);
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-color-dark);
+    background: var(--bg-color-light);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 12px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
