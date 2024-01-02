@@ -1,0 +1,15 @@
+.users_list {
+    padding: 24px;
+    max-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+    overflow-y: auto;
+}
+
+.users_list li {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}

@@ -4,6 +4,9 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import {TsconfigPathsPlugin} from "tsconfig-paths-webpack-plugin";
 
 const webpackConfig = (env): Configuration => ({
+    devServer: {
+        historyApiFallback: true,
+    },
     entry: "./src/index.tsx",
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".css"],
@@ -44,7 +47,8 @@ const webpackConfig = (env): Configuration => ({
             "process.env.NAME": JSON.stringify(require("./package.json").name),
             "process.env.VERSION": JSON.stringify(require("./package.json").version)
         }),
-    ]
+    ],
+    
 });
 
 export default webpackConfig;

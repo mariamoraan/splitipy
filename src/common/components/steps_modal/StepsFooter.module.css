@@ -15,7 +15,7 @@
     transition: 500ms ease;
 }
 
-.progress-circle_fill {
+.progress_circle_fill {
     background: var(--accent-color-100);
 }
 
@@ -38,6 +38,7 @@
     border: var(--accent-color-100);
     color: var(--primary-color-light);
     border-radius: 8px;
+    transition: 500ms ease;
 }
 
 .disabled {

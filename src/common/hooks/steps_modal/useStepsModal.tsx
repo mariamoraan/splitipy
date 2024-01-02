@@ -4,7 +4,7 @@ import { IStep } from "src/common/components/steps_modal/StepsModal";
 export const useSteps = (
     steps: IStep[], 
     onFinish: () => void, 
-    closeModal: () => void,
+    closeModal?: () => void,
     initialStep:number = 0
     ) => {
     const [activeStepIndex, setActiveStepIndex] = useState(initialStep);
@@ -14,7 +14,7 @@ export const useSteps = (
         setActiveStepIndex(prev => Math.min(prev + 1, steps.length - 1))
         if(isLastStep) {
             onFinish() 
-            closeModal()
+            if(closeModal) closeModal()
             setActiveStepIndex(0)
         }
     }

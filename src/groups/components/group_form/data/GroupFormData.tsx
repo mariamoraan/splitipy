@@ -5,9 +5,6 @@ import styles from './GroupFormData.module.css'
 
 export const GroupFormData = () => {
     const {group, setGroup} = useContext<IGroupFormContext>(GroupFormContext)
-    const onSubmit = () => {
-
-    }
     const form = [
         {
             type:  FormType.TEXT,
@@ -28,7 +25,6 @@ export const GroupFormData = () => {
     return (
         <Form 
         form={form} 
-        onSubmit={onSubmit} 
         className={styles.group_form_data}
         />
     )

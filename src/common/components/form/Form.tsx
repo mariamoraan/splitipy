@@ -16,12 +16,12 @@ type Props = {
         value: string | number,
         setValue: (value: string | number) => void,
     }[],
-    onSubmit: () => void,
+    onSubmit?: () => void,
     className?: string,
 }
 
 export const Form = (props: Props) => {
-    const {form, onSubmit, className=''} = props
+    const {form, onSubmit=()=>{}, className=''} = props
     const onSubmitForm = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         onSubmit()

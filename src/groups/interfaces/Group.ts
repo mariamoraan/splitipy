@@ -3,4 +3,5 @@ export interface IGroup {
     name: string,
     color: string,
     image: string,
+    users: string[],
 }

@@ -1,0 +1,16 @@
+.wrapper {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.name {
+    flex: 1;
+}
+
+.users {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}

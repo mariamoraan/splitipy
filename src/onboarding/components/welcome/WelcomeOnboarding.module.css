@@ -1,0 +1,24 @@
+.wrapper {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.wrapper img {
+    margin-bottom: 24px;
+    width: auto;
+    max-width: min(800px, 100%);
+    align-self: center;
+}
+
+.title {
+    margin-bottom: 24px;
+    align-self: center;
+}
+
+.text {
+    max-width: min(800px, 100%);
+    align-self: center;
+    text-align: center;
+}
