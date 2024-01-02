@@ -1,0 +1,27 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form input[type=text] {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--primary-color-dark);
+}
+
+.form label:has(input[type=color]) {
+    flex-direction: row;
+    align-items: center;
+}
+.form input[type=color] {
+    padding: 0;
+    border: none;
+    background: none;
+}
