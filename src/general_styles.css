@@ -8,6 +8,10 @@
 .space-between {
     justify-content: space-between;
 }
+.flex-column  {
+    display: flex;
+    flex-direction: column;
+}
 .display-center {
     display: flex;
     justify-content: center;
@@ -19,5 +23,5 @@
 }
 
 .height-100 {
-    max-height: 100vh;
+    max-height: 100dvh;
 }

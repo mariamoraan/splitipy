@@ -1,8 +1,8 @@
 .wrapper {
     padding: 24px;
-    margin-bottom: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 12px;
+    background: var(--accent-color-190);
 }

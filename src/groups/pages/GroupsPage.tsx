@@ -1,15 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useModal } from 'src/common/hooks/modal/useModal'
 import { GroupForm } from '../components/group_form/GroupForm'
 import { getGroups } from '../services/groups'
 import { GroupsContext } from '../context/GroupsContext'
 import { Header } from '../components/header/Header'
 import { Groups } from '../components/groups/Groups'
-import { AppContext } from 'src/App'
+import { NoGroups } from '../components/no_groups/NoGroups'
 
 export const GroupsPage = () => {
     const [groups, setGroups] = useState([])
-    const {setHasActiveUser} = useContext(AppContext)
     const {closeModal, openModal, isOpen} = useModal()
     useEffect(() => {
         setGroups(getGroups())
@@ -20,14 +19,14 @@ export const GroupsPage = () => {
             groups,
             setGroups
         }}>
-            <button onClick={() => localStorage.clear()}>Clear</button>
-            <button onClick={() => setHasActiveUser(false)}>Cerrar sesión</button>
-            <Header openModal={openModal} />
-            <Groups />
-            <GroupForm
-                closeModal={closeModal}
-                isOpen={isOpen}
-            />
+            <div className='flex-column'>
+                <Header openModal={openModal} />
+                {groups.length > 0 ? <Groups /> : <NoGroups />}
+                <GroupForm
+                    closeModal={closeModal}
+                    isOpen={isOpen}
+                />
+            </div>
         </GroupsContext.Provider>
     )
 }
