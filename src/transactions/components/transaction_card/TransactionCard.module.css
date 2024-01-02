@@ -1,0 +1,53 @@
+.wrapper {
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.wrapper .title {
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: var(--accent-color-100);
+}
+
+.wrapper .date {
+    margin-bottom: 24px;
+    color: var(--primary-color-dark-100);
+}
+
+.wrapper .total {
+    margin-top: 24px;
+}
+
+.wrapper .movements {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+}
+
+.wrapper .movements li {
+    display: flex;
+    align-items: center;
+    gap: 1ch;
+}
+
+.user_name {
+    font-weight: bold;
+    color: var(--accent-color-100);
+}
+
+.payment {
+    font-weight: bold;
+    color: var(--accent-color-100);
+}
+
+.payer {
+    font-weight: bold;
+    color: var(--green);
+}
+
+.debtor {
+    font-weight: bold;
+    color: var(--red)
+}

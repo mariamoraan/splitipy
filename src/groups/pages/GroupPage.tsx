@@ -1,9 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { IGroup } from '../interfaces/Group'
 import { BASE_GROUP_FORM } from '../constants/group_form/baseGroupForm'
 import { getGroupById } from '../services/groups'
 import { GroupHeader } from '../components/group_header/GroupHeader'
+import { TransactionForm } from 'src/transactions/components/transaction_form/TransactionForm'
+import { Transactions } from 'src/transactions/components/transactions/Transactions'
+
+export const GroupContext = createContext({
+    group: {...BASE_GROUP_FORM, id: ''},
+    setGroup: (group: IGroup) => {},
+})
 
 export const GroupPage = () => {
     const {state} = useLocation()
@@ -14,8 +21,14 @@ export const GroupPage = () => {
     }, [])
 
     return (
-        <div>
-            <GroupHeader group={group} />
-        </div>
+        <GroupContext.Provider value={{group, setGroup}}>
+            <div
+            className='height-100 overflow-hidden'
+            >
+                <GroupHeader group={group} />
+                <TransactionForm />
+                <Transactions />
+            </div>
+        </GroupContext.Provider>
     )
 }

@@ -1,0 +1,29 @@
+.wrapper {
+    padding: 12px;
+}
+
+.transactions_list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+}
+
+.transactions_list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.transactions_list li .payment_input {
+    flex: 1;
+    border: none;
+    background: none;
+    outline: none;
+    color: var(--accent-color-100);
+    text-align: end;
+}
+
+.transactions_list li .currency {
+    color: var(--accent-color-100);
+}

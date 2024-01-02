@@ -1,12 +1,9 @@
 import path from "path";
-import webpack, {Configuration} from "webpack";
+import webpack from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import {TsconfigPathsPlugin} from "tsconfig-paths-webpack-plugin";
 
-const webpackConfig = (env): Configuration => ({
-    devServer: {
-        historyApiFallback: true,
-    },
+const webpackConfig = (env) => ({
     entry: "./src/index.tsx",
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".css"],
@@ -37,6 +34,9 @@ const webpackConfig = (env): Configuration => ({
                 use: ["style-loader", "css-loader"],
             },
         ]
+    },
+    devServer: {
+        historyApiFallback: true,
     },
     plugins: [
         new HtmlWebpackPlugin({

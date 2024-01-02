@@ -23,7 +23,7 @@ export const GroupHeader = (props:Props) => {
             <h1 className={styles.name}>{group.name}</h1>
             <ul className={styles.users}>
                 {
-                    group.users.map(user => <UserIcon user={getUserById(user)} />).slice(0, Math.min(group.users.length, 4))
+                    group.users.map(user => <UserIcon key={user} user={getUserById(user)} />).slice(0, Math.min(group.users.length, 4))
                 }
                 {group.users.length > 4 ? '...' : null}
             </ul>

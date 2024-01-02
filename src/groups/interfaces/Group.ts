@@ -4,4 +4,5 @@ export interface IGroup {
     color: string,
     image: string,
     users: string[],
+    transactions: string[],
 }

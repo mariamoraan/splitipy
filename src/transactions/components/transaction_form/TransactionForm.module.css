@@ -1,0 +1,8 @@
+.modal {
+    height: min(600px, 90%);
+    width: min(600px, 90%);
+}
+
+.wrapper {
+    padding: 24px;
+}
