@@ -22,27 +22,30 @@ const App = () => {
         setHasActiveUser(isActive)
     }, [])
 
-    const onboardingRouter = createBrowserRouter([
-        {
-         path: '/',
-         element: <OnboardingPage />
-        }
-     ]);
+    
 
     const router = createBrowserRouter([
+        {
+            path: '/onboarding',
+            element: <OnboardingPage />
+        },
+       {
+            path: '/groups',
+            element: <GroupsPage />
+       },
+       {
+            path: '/group',
+            element: <GroupPage />
+       },
        {
         path: '/',
         element: <GroupsPage />
-       },
-       {
-        path: '/group',
-        element: <GroupPage />
-       },
+        },
     ]);
 
    return (
     <AppContext.Provider value={{hasActiveUser, setHasActiveUser}}>
-        <RouterProvider router={hasActiveUser ? router : onboardingRouter} />
+        <RouterProvider router={router} />
     </AppContext.Provider>
    )
 };

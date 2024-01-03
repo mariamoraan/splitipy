@@ -6,10 +6,12 @@ import { WelcomeOnboarding } from '../components/welcome/WelcomeOnboarding'
 import styles from './OnboardingPage.module.css'
 import { createActiveUser } from 'src/users/services/users'
 import { AppContext } from 'src/App'
+import { useNavigate } from 'react-router-dom'
 
 export const OnboardingPage = () => {
     const [name, setName] = useState('')
     const {setHasActiveUser} = useContext(AppContext)
+    const navigate = useNavigate();
 
     const steps: IStep[] = [
         {
@@ -29,6 +31,7 @@ export const OnboardingPage = () => {
     const onFinish = () => {
         createActiveUser({name})
         setHasActiveUser(true)
+        navigate('/groups')
     }
     const isOpen = true
     
