@@ -16,7 +16,7 @@ export const TransactionCard = (props: Props) => {
     return (
         <div className={styles.wrapper}>
             <p className={styles.title}>{transaction.title}</p>
-            <p className={styles.date}>{getDateString(transaction.date)}</p>
+            <p className={styles.date}>{getDateString(new Date(transaction.date))}</p>
             <ul className={styles.movements}>
                 {movements.map(({user, pay, debt}) => 
                     <li key={user.id}>

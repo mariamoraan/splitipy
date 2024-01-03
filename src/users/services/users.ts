@@ -14,8 +14,7 @@ export const getUserById = (id: string) => getUsers().find(user => user.id === i
 export const createUser = (user: Omit<IUser, 'id' | 'color'>) => {
     const newUser: IUser = {...user, id: generateUid(), color: generateUserColor()}
     const currentUsers: IUser[] = getUsers()
-    currentUsers.push(newUser)
-    LocalDB.create(USERS, currentUsers)
+    LocalDB.create(USERS, [...currentUsers, newUser])
     return newUser
 }
 export const getActiveUserId = () => JSON.parse(LocalDB.get(ACTIVE_USER_IUD)) || null

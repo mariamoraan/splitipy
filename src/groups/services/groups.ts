@@ -14,8 +14,7 @@ export const getGroupById = (id: string) => getGroups().find(group => group.id =
 export const createGroup = (group: Omit<IGroup, 'id'>, id:string = '') => {
     const newGroup: IGroup = {...group, id: id ? id : generateUid()}
     const currentGroups: IGroup[] = getGroups()
-    currentGroups.push(newGroup)
-    LocalDB.create(GROUPS, currentGroups)
+    LocalDB.create(GROUPS, [...currentGroups, newGroup])
     return newGroup
 }
 
