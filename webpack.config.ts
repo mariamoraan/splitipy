@@ -50,7 +50,8 @@ const webpackConfig = (env) => ({
         }),
         new CopyPlugin({
             patterns: [
-              { from: "src", to: "build" }
+              { from: "src", to: "build" },
+              {from: "public/assets", to: "assets"}
             ],
           }),
     ],
