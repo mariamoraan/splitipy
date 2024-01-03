@@ -2,7 +2,7 @@ import {describe, expect, test} from '@jest/globals';
 import { compareDates, getDateString, getDateToYYYYMMDD } from '../utils/dates';
 import { generateUid } from '../utils/generateUid';
 
-describe('users service module', () => {
+describe('users module', () => {
     test('getDateToYYYYMMDD must return date in format YYYY-MM-DD', () => {
         // Given
         const cases = [
