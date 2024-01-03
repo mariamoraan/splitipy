@@ -1,6 +1,6 @@
 .transactions_list {
     padding: 24px;
-    height: calc(100dvh - 20vh);
+    height: calc(100dvh - 35vh);
     display: flex;
     flex-direction: column;
     gap: 24px;

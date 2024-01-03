@@ -6,3 +6,9 @@ export interface IGroup {
     users: string[],
     transactions: string[],
 }
+
+export interface IMinimalPayment {
+    from: string,
+    to: string,
+    amount: string,
+}

@@ -2,18 +2,13 @@ import React, { useContext } from 'react'
 import styles from './Groups.module.css'
 import { GroupCard } from '../group_card/GroupCard'
 import { GroupsContext } from 'src/groups/context/GroupsContext'
-import {  useNavigate, createSearchParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const Groups = () => {
     const navigate = useNavigate()
     const {groups} = useContext(GroupsContext)
     const navigateToGroupPage = (id: string) => {
-        navigate({
-            pathname: '/group',
-            search: createSearchParams({
-                groupId: id
-            }).toString()
-        })
+        navigate("/group", {state: {id: id}})
     }
     return (
         <ul>
