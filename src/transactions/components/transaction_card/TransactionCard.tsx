@@ -21,11 +21,13 @@ export const TransactionCard = (props: Props) => {
                 {movements.map(({user, pay, debt}) => 
                     <li key={user.id}>
                         <UserIcon user={user} />
-                        <span className={styles.user_name}>{user.name}</span>
-                        <span>ha pagado</span>
-                        <span className={styles.payment}>{pay}€</span>
-                        {debt < 0 ? <span>y le deben</span>: <span>y debe</span>}
-                        <span className={debt < 0 ? styles.payer : styles.debtor}>{Math.abs(debt)}€</span>
+                        <p>
+                            <span className={styles.user_name}>{user.name} </span>
+                            ha pagado
+                            <span className={styles.payment}> {pay}€ </span>
+                            {debt < 0 ? 'y le deben': 'y debe'}
+                            <span className={debt < 0 ? styles.payer : styles.debtor}> {Math.abs(debt)}€</span>
+                        </p>
                     </li>
                     
                 )}

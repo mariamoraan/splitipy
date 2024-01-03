@@ -2,7 +2,7 @@ import { generateUid } from "src/common/utils/generateUid";
 import { ITransaction, TransactionRecord } from "../interfaces/transaction";
 import { LocalDB } from "src/common/services/localDB";
 import { TRANSACTIONS } from "../constants/keys";
-import { parse } from "path";
+import { compareDates } from "src/common/utils/dates";
 
 export const getTransactions = ():ITransaction[] => {
     const transactions: ITransaction[] = JSON.parse(LocalDB.get(TRANSACTIONS)) as ITransaction[] || []
@@ -33,3 +33,5 @@ export const calculateTransactionDebts = (transactionMap: {[key: string]: Transa
     })
     return transactionMap
 }
+
+export const compareTransactions = (transaction1: ITransaction, transaction2:ITransaction) => compareDates(new Date(transaction1.date), new Date(transaction2.date))

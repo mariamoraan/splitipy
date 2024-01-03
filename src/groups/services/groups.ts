@@ -11,8 +11,8 @@ export const getGroups = ():IGroup[] => {
 
 export const getGroupById = (id: string) => getGroups().find(group => group.id === id)
 
-export const createGroup = (group: Omit<IGroup, 'id'>) => {
-    const newGroup: IGroup = {...group, id: generateUid()}
+export const createGroup = (group: Omit<IGroup, 'id'>, id:string = '') => {
+    const newGroup: IGroup = {...group, id: id ? id : generateUid()}
     const currentGroups: IGroup[] = getGroups()
     currentGroups.push(newGroup)
     LocalDB.create(GROUPS, currentGroups)
@@ -27,8 +27,8 @@ export const removeGroup = (id: string) => {
 export const modifyGroup = (id: string, modifications: Partial<IGroup>): IGroup => {
     const currentGroup = getGroupById(id)
     if(!currentGroup) return
-    removeGroup(id)
     const newGroup = {...currentGroup, ...modifications}
-    createGroup(newGroup)
+    removeGroup(id)
+    createGroup(newGroup, id)
     return newGroup
 }

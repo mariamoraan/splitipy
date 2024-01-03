@@ -35,9 +35,6 @@ const webpackConfig = (env) => ({
             },
         ]
     },
-    devServer: {
-        historyApiFallback: true,
-    },
     plugins: [
         new HtmlWebpackPlugin({
             template: "./public/index.html"
@@ -48,7 +45,12 @@ const webpackConfig = (env) => ({
             "process.env.VERSION": JSON.stringify(require("./package.json").version)
         }),
     ],
-    
+    devServer: {
+        host: 'localhost',
+        port: 3001,
+        open: true,
+        historyApiFallback: true,
+    },
 });
 
 export default webpackConfig;

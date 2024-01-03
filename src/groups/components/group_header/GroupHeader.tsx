@@ -1,17 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { IGroup } from 'src/groups/interfaces/Group'
 import styles from './GroupHeader.module.css'
 import { UserIcon } from 'src/users/components/icon/UserIcon'
 import { getUserById } from 'src/users/services/users'
 import { ArrowBack } from '@mui/icons-material'
 import { useNavigate } from "react-router-dom";
+import { GroupContext } from 'src/groups/pages/GroupPage'
 
-type Props = {
-    group: IGroup
-}
-
-export const GroupHeader = (props:Props) => {
-    const {group} = props
+export const GroupHeader = () => {
+    const {group} = useContext(GroupContext)
     const navigate = useNavigate();
 
     return (

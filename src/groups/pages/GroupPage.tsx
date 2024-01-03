@@ -25,7 +25,7 @@ export const GroupPage = () => {
             <div
             className='height-100 overflow-hidden'
             >
-                <GroupHeader group={group} />
+                <GroupHeader />
                 <TransactionForm />
                 <Transactions />
             </div>
