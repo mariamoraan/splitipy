@@ -12,6 +12,8 @@ const groupWithoutId: Omit<IGroup, 'id'> = {
     name: 'Amigos',
     color: '#DCF2F1',
     image: '',
+    transactions: [],
+    users: []
 }
 const group: IGroup = {
     id: groupId,
