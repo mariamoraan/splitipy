@@ -1,6 +1,5 @@
-export const getDateToYYYYMMDD = (date: string) => {
-    const formatDate = new Date(date)
-    return `${formatDate.getFullYear()}-${formatDate.getMonth()+1 <= 9 ? `0${formatDate.getMonth()+1}` : formatDate.getMonth()+1}-${formatDate.getDate() <= 9 ? `0${formatDate.getDate()}` : formatDate.getDate()}`
+export const getDateToYYYYMMDD = (date: Date) => {
+    return `${date.getFullYear()}-${date.getMonth()+1 <= 9 ? `0${date.getMonth()+1}` : date.getMonth()+1}-${date.getDate() <= 9 ? `0${date.getDate()}` : date.getDate()}`
 };
 export const getDateString = (date: string) =>  new Date(date).toLocaleString('default', { day: '2-digit', month: 'short', year: 'numeric' });
 export const compareDates = (date1: Date, date2: Date) => {

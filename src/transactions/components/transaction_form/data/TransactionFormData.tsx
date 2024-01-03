@@ -19,8 +19,8 @@ export const TransactionFormData = () => {
             type:  FormType.DATE,
             name: 'date',
             label: 'Fecha:',
-            value: getDateToYYYYMMDD(transaction.date),
-            setValue: (date: string) => setTransaction({...transaction, date: getDateToYYYYMMDD(date)})
+            value: getDateToYYYYMMDD(new Date(transaction.date)),
+            setValue: (date: string) => setTransaction({...transaction, date: getDateToYYYYMMDD(new Date(date))})
         },
     ]
     return (
