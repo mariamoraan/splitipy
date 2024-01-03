@@ -10,10 +10,13 @@ type Props = {
 export const MinimalPayments = (props: Props) => {
     const {minimalPayments} = props
     return (
-        <ul className={styles.wrapper}>
-            {minimalPayments
-            .map(({from, to, amount}) => <li key={`${from}-${to}`}><p>{getUserById(from).name} paga {amount}€ a {getUserById(to).name}</p></li>)
-        }
-        </ul>
+        <div className={styles.wrapper}>
+            <h2>Summary</h2>
+            <ul>
+                {minimalPayments
+                .map(({from, to, amount}) => <li key={`${from}-${to}`}><p>{getUserById(from).name} paga {amount}€ a {getUserById(to).name}</p></li>)
+            }
+            </ul>
+        </div>
     )
 }
