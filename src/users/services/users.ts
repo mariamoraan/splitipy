@@ -21,8 +21,9 @@ export const createUser = (user: Omit<IUser, 'id' | 'color'>) => {
 export const getActiveUserId = () => JSON.parse(LocalDB.get(ACTIVE_USER_IUD)) || null
 export const getActiveUser = ():IUser => getUserById(getActiveUserId())
 
-export const createActiveUser = (user: Omit<IUser, 'id' | 'color'>) => {
+export const createActiveUser = (user: Omit<IUser, 'id' | 'color'>): IUser => {
     const newUser = createUser(user)
     LocalDB.create(ACTIVE_USER_IUD, newUser.id)
+    return newUser
 }
 

@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useParams, useSearchParams } from 'react-router-dom'
 import { IGroup } from '../interfaces/Group'
 import { BASE_GROUP_FORM } from '../constants/group_form/baseGroupForm'
 import { getGroupById } from '../services/groups'
@@ -13,11 +13,12 @@ export const GroupContext = createContext({
 })
 
 export const GroupPage = () => {
-    const {state} = useLocation()
-    const [group, setGroup] = useState<IGroup>({...BASE_GROUP_FORM, id: state.id})
+    const [queryParameters] = useSearchParams()
+    const groupId = queryParameters.get("groupId")
+    const [group, setGroup] = useState<IGroup>({...BASE_GROUP_FORM, id: groupId})
 
     useEffect(() => {
-        setGroup(getGroupById(state.id))
+        setGroup(getGroupById(groupId))
     }, [])
 
     return (

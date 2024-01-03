@@ -36,7 +36,7 @@ const App = () => {
        },
        {
         path: '/group',
-        element: <GroupPage />
+        element: <GroupPage />,
        },
     ]);
 

@@ -4,7 +4,6 @@ import { getGroupById, getGroups, createGroup } from '../services/groups';
 import { IGroup } from '../interfaces/Group';
 import * as GroupsService from '../services/groups'
 import { LocalDB } from 'src/common/services/localDB';
-import * as GenerateUIDModule from '../../common/utils/generateUid'
 
 
 const groupId = 'adsd-sdaaswdsa-asdsad'
@@ -75,15 +74,13 @@ describe('groups service', () => {
     })
     test('createGroup must call LocalDB.create with GROUP key and a array with the groups', () => {
          // Given
-        const spyOnGenerateUid = jest.spyOn(GenerateUIDModule, 'generateUid')
-        spyOnGenerateUid.mockReturnValue(groupId)
         const spygetGroups = jest.spyOn(GroupsService, 'getGroups')
         spygetGroups.mockReturnValue([])
         const spyCreate = jest.spyOn(LocalDB, 'create')
         spyCreate.mockImplementation(() => {})
         // When
-        createGroup(groupWithoutId)
+        const newGroup = createGroup(groupWithoutId)
         // Then
-        expect(spyCreate).toHaveBeenCalledWith(GROUPS, [group])
+        expect(spyCreate).toHaveBeenCalledWith(GROUPS, [newGroup])
     })
 })
